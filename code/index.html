@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>ZIPCode Property Estimation</title>
+  <!--PULL CSS FROM STATIC DIRECTORY -->
+  <link href="{{ url_for('static', filename='css/zip.css') }}" rel="stylesheet"/>
+</head>
+
+<body>
+  <div class="container">
+    <h1>
+      <center>Estimating Residential Property Values by ZIPCode</center>
+    </h1>
+
+    {% block content %}
+    <!--FORM CONTENT -->
+    <form method=post>
+        {{ form.csrf_token }}
+      <h2>
+      {{ form.zipcode.label }}
+      <br>
+      {{ form.zipcode }}
+
+
+      {{ form.submit }}
+    </h2>
+    </form>
+    {% endblock %}
+  </div>
+</body>
+
+</html>
